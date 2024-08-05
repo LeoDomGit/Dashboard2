@@ -10,7 +10,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Leo\ServicesCollections\Models\ServicesCollections;
-class ServicesController 
+class ServicesController
 {
     use HasCrud;
     protected $model;
@@ -34,10 +34,12 @@ class ServicesController
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function api_home(Request $request)
     {
-        //
+        $services =Services::highlight()->get();
+        return response()->json(['data'=>$services]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -75,7 +77,14 @@ class ServicesController
         $services=Services::all();
         return response()->json(['check'=>true,'data'=>$services]);
     }
+    /**
+     * Show the form for creating a new resource.
+     */
 
+    public function api_single($slug){
+        $service=Services::active()->where('slug',$slug)->get();
+        return response()->json($service);
+    }
     /**
      * Display the specified resource.
      */
@@ -89,8 +98,10 @@ class ServicesController
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Services $services,$id)
+    public function api_service()
     {
+        $result = Services::active()->get();
+        return response()->json($result);
 
     }
 
@@ -103,13 +114,13 @@ class ServicesController
         if (!$service) {
             return response()->json(['check' => false, 'msg' => 'Không tìm thấy mã dịch vụ']);
         }
-    
+
         $data = $request->all();
-    
+
         if ($request->has('name')) {
             $data['slug'] = Str::slug($request->name);
         }
-    
+
         if ($request->hasFile('image')) {
             if ($service->image) {
                 $oldImagePath = storage_path('app/public/services/' . $service->image);
@@ -117,7 +128,7 @@ class ServicesController
                     Storage::delete('public/services/' . $service->image);
                 }
             }
-    
+
             // Store the new image
             $file = $request->file('image');
             $imageName = $file->getClientOriginalName();
@@ -125,9 +136,9 @@ class ServicesController
             $data['image'] = $imageName;
         }
         $data['updated_at'] = now();
-    
+
         $service->update($data);
-    
+
         $services = Services::all();
         return response()->json(['check' => true, 'data' => $services]);
     }

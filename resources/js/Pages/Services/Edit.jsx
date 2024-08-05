@@ -147,7 +147,7 @@ function Index({ service,services,collections }) {
       formData.append("price", price);
       formData.append("compare_price", compare_price);
       formData.append("discount", discount);
-      formData.append("id_collections", idCollection);
+      formData.append("id_collection", idCollection);
       formData.append("summary", summary);
       formData.append("content", content);
       axios

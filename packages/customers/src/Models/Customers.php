@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Leo\Bookings\Models\Bookings;
 
 class Customers extends Authenticatable
 {
@@ -14,8 +15,11 @@ class Customers extends Authenticatable
 
     protected $table='customers';
     protected $fillable=['id','name','address','password','phone','email','status','email_verified_at','created_at','updated_at'];
-    
+
     public function cart(){
         return $this->hasMany(Customers::class);
+    }
+    public function bookings(){
+        return $this->hasMany(Bookings::class);
     }
 }

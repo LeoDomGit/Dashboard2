@@ -18,6 +18,6 @@ class ServicesCollections extends Model
 
     public function scopeHighlight($query)
     {
-        return $query->where('highlighted', 1);
+        return $query->where('status',1)->where('highlighted', 1);
     }
 }

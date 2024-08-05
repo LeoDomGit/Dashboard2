@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Services extends Model
 {
-    protected $table='services';
-    protected $fillable=['id','name','price','slug','highlighted','id_collections','compare_price','discount','summary','image','content','status','created_at','updated_at'];
+    protected $table = 'services';
+    protected $fillable = ['id', 'name', 'price', 'slug', 'highlighted', 'id_collections', 'compare_price', 'discount', 'summary', 'image', 'content', 'status', 'created_at', 'updated_at'];
     use HasFactory;
     public function scopeActive($query)
     {
@@ -17,5 +17,10 @@ class Services extends Model
     public function scopeHighlight($query)
     {
         return $query->where('highlighted', 1);
+    }
+
+    public function service_bill_deatils()
+    {
+        return $this->hasMany(ServiceBillsDetails::class, 'id_service');
     }
 }

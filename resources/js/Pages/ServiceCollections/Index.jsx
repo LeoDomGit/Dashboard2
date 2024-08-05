@@ -273,7 +273,7 @@ function Index({ collections }) {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a
-                    className="btn btn-primary"
+                    className="btn btn-outline-primary"
                     onClick={(e) => resetCreate()}
                     aria-current="page"
                     href="#"

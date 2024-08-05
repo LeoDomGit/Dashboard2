@@ -1,0 +1,40 @@
+{
+    "name": "leo/renvenues",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Leo\\Renvenues\\": "src/",
+            "Leo\\Renvenues\\Providers\\": "src/Providers/",
+            "Leo\\Renvenues\\Database\\Migrations\\": "database/migrations/",
+            "Leo\\Renvenues\\Database\\Seeders\\": "database/seeders/"
+        },
+        "classmap": [
+            "src/Controllers",
+            "src/Providers",
+            "src/Models",
+            "./routes"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Leo\\Renvenues\\Providers\\RenvenuesServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Dom",
+            "email": "leodomsolar@gmail.com"
+        }
+    ],
+    "repositories": [],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

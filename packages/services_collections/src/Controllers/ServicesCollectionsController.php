@@ -20,9 +20,10 @@ class ServicesCollectionsController extends Controller
         return Inertia::render("ServiceCollections/Index",['collections'=>$data]);
     }
 
-    public function create()
+    public function api_highlight_index()
     {
-        //
+        $data= ServicesCollections::highlight()->orderBy('id','asc')->get();
+        return response()->json($data);
     }
 
     /**

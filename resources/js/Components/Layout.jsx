@@ -10,6 +10,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
 import ShopIcon from '@mui/icons-material/Shop';
 import DesignServicesTwoToneIcon from '@mui/icons-material/DesignServicesTwoTone';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CallIcon from '@mui/icons-material/Call';
+import MapIcon from '@mui/icons-material/Map';
+import BookIcon from '@mui/icons-material/Book';
 import "../../css/app.css";
 function Layout({ children }) {
   const { collapseSidebar } = useProSidebar();
@@ -40,16 +44,22 @@ function Layout({ children }) {
             <a href={'/brands'}> <MenuItem icon={<BrandingWatermarkIcon />}>Thương hiệu</MenuItem></a>
             <a href={'/products'}> <MenuItem icon={<InventoryIcon />}>Sản phẩm</MenuItem></a>
             </SubMenu>
+           <a href={'/contacts'}> <MenuItem icon={<CallIcon />}>Liên hệ</MenuItem></a>
            <a href={'/slides'}> <MenuItem icon={<ShopIcon />}>Slides</MenuItem></a>
            <a href={'/bills'}> <MenuItem icon={<CardTravelIcon />}>Hoá đơn</MenuItem></a>
+           <a href={'/sitemap'}> <MenuItem icon={<MapIcon />}>Sitemap</MenuItem></a>
+           <a href={'/bookings'}> <MenuItem icon={<CalendarMonthIcon />}>Đặt lịch</MenuItem></a>
            <SubMenu label="Dịch vụ" icon={<BrandingWatermarkIcon />}>
            <a href={'/service-collections'}> <MenuItem icon={<DesignServicesTwoToneIcon />}>Nhóm Dịch vụ </MenuItem></a>
            <a href={'/services'}> <MenuItem icon={<DesignServicesTwoToneIcon />}>Dịch vụ </MenuItem></a>
            </SubMenu>
-         
+           <SubMenu label="Bài viết" icon={<BrandingWatermarkIcon />}>
+           <a href={'/post-collections'}> <MenuItem icon={<BookIcon />}>Nhóm bài viết </MenuItem></a>
+           <a href={'/posts'}> <MenuItem icon={<DesignServicesTwoToneIcon />}>Bài viết </MenuItem></a>
+           </SubMenu>
            <a href={'/logout'}> <MenuItem icon={<LogoutIcon />}>Log out</MenuItem></a>
 
-{/*             
+{/*
             <MenuItem icon={<ReceiptOutlinedIcon />}>Profile</MenuItem>
             <MenuItem icon={<HelpOutlineOutlinedIcon />}>FAQ</MenuItem>
             <MenuItem icon={<CalendarTodayOutlinedIcon />}>Calendar</MenuItem> */}

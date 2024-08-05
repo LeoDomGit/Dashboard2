@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f7df5f02432006118a8022621e6a0c0",
+    "content-hash": "5d26b34e8b16451d41ccf6cb72183c17",
     "packages": [
         {
             "name": "beyondcode/laravel-websockets",
@@ -3119,6 +3119,49 @@
             }
         },
         {
+            "name": "leo/contacts",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/contacts",
+                "reference": "d3ca88e1ddd4fd2d39d9a592ceae8929e8c57e76"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\Contacts\\Providers\\ContactsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\Contacts\\": "src/",
+                    "Leo\\Contacts\\Providers\\": "src/Providers/",
+                    "Leo\\Contacts\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\Contacts\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "leo/customers",
             "version": "dev-main",
             "dist": {
@@ -3205,6 +3248,49 @@
             }
         },
         {
+            "name": "leo/post",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/post",
+                "reference": "bca15de708426afd7c69e2352d31f6c9a219de2c"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\Post\\Providers\\PostServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\Post\\": "src/",
+                    "Leo\\Post\\Providers\\": "src/Providers/",
+                    "Leo\\Post\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\Post\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "leo/products",
             "version": "dev-main",
             "dist": {
@@ -3246,6 +3332,49 @@
             "authors": [
                 {
                     "name": "LeoDomGit",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "leo/renvenues",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/renvenues",
+                "reference": "8ab20a6964a01f9e6a75374cafcc9df3ca00a9f0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\Renvenues\\Providers\\RenvenuesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\Renvenues\\": "src/",
+                    "Leo\\Renvenues\\Providers\\": "src/Providers/",
+                    "Leo\\Renvenues\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\Renvenues\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
                     "email": "leodomsolar@gmail.com"
                 }
             ],
@@ -3361,6 +3490,49 @@
                     "Leo\\ServicesCollections\\Providers\\": "src/Providers/",
                     "Leo\\ServicesCollections\\Database\\Migrations\\": "database/migrations/",
                     "Leo\\ServicesCollections\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "leo/sitemap",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/sitemap",
+                "reference": "ce16557e8b5189dee59edf0553cf61aa8ec1f1a4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\Sitemap\\Providers\\SitemapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\Sitemap\\": "src/",
+                    "Leo\\Sitemap\\Providers\\": "src/Providers/",
+                    "Leo\\Sitemap\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\Sitemap\\Database\\Seeders\\": "database/seeders/"
                 },
                 "classmap": [
                     "src/Controllers",

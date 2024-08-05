@@ -14,7 +14,7 @@ use Leo\Customers\Mail\createUser;
 use Illuminate\Support\Facades\Auth;
 use Leo\Bills\Models\Bills;
 
-class CustomersController 
+class CustomersController
 {
     /**
      * Display a listing of the resource.
@@ -30,17 +30,18 @@ class CustomersController
     public function get_bills(Request $request)
     {
         $bills = Bills::with(['details.product'])
-        ->where('email',Auth::user()->email)
-        ->get()
-        ->map(function ($bill) {
-            $total = $bill->details->reduce(function ($carry, $detail) {
-                $productDiscount = $detail->product->discount;
-                $quantity = $detail->quantity;
-                return $carry + ($productDiscount * $quantity);
-            }, 0);
-            $bill->total = $total;
-            return $bill;
-        });
+            ->where('email', Auth::user()->email)
+            ->paginate(4) // paginate with 4 items per page
+            ->through(function ($bill) {
+                $total = $bill->details->reduce(function ($carry, $detail) {
+                    $productDiscount = $detail->product->discount;
+                    $quantity = $detail->quantity;
+                    return $carry + ($productDiscount * $quantity);
+                }, 0);
+                $bill->total = $total;
+                return $bill;
+            });
+
         return response ()->json($bills);
     }
 
@@ -85,7 +86,8 @@ class CustomersController
      */
     public function show(Customers $customers)
     {
-        //
+        $result = Customers::where('id',Auth::id())->first();
+        return response()->json($result);
     }
 
     /**
@@ -108,13 +110,20 @@ class CustomersController
         if ($validator->fails()) {
             return response()->json(['check' => false, 'msg' => $validator->errors()->first()]);
         }
-        $customer= Customers::where('id',$id)->first();
+        $customer= Customers::where('status',1)->where('id',$id)->first();
         if(!$customer){
             return response()->json(['check'=>false,'msg'=>'Tài khoản không tồn tại']);
         }
         $data= $request->all();
+        if($request->has('email')){
+            $data['email_verified_at']=null;
+        }
+        if($data['password']){
+            $data['password']=Hash::make($data['password']);
+        }
         $data['updated_at']= now();
         Customers::where('id',$id)->update($data);
+        $customers=Customers::where('id',Auth::id())->first();
         return response()->json(['check'=>true]);
     }
     /**

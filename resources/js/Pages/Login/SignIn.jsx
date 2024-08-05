@@ -95,7 +95,7 @@ export default function SignInSide() {
             }).catch((error) => {
                 notyf.open({
                     type: "error",
-                    message: "An error occurred. Please try again.",
+                    message: "Tài khoản không hợp lệ",
                 });
             });
         }

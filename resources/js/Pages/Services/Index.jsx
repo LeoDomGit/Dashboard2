@@ -49,7 +49,7 @@ function Index({ services,collections }) {
               message: "Chỉnh sửa dịch vụ thành công",
             });
             setData(res.data.data);
-  
+
           } else if (res.data.check == false) {
             notyf.open({
               type: "error",
@@ -58,7 +58,7 @@ function Index({ services,collections }) {
           }
         });
     }
-   
+
   };
   window.CKEDITOR.replace("editor", options);
   const updateFiles = (incommingFiles) => {
@@ -164,7 +164,7 @@ function Index({ services,collections }) {
       formData.append("name", name);
       formData.append("price", price);
       formData.append("compare_price", compare_price);
-      formData.append("id_collections", idCollection);
+      formData.append("id_collection", idCollection);
       formData.append("discount", discount);
       formData.append("summary", summary);
       formData.append("content", content);
@@ -284,7 +284,7 @@ function Index({ services,collections }) {
               id="navbarSupportedContent"
             >
  <a
-                    className="btn btn-primary"
+                    className="btn btn-outline-primary"
                     onClick={(e) => resetCreate()}
                     aria-current="page"
                     href="#"
