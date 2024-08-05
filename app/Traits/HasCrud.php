@@ -15,7 +15,7 @@ trait HasCrud
             return $model::with($with)->select($columns)->get();
         }
     }
-
+    
     public function storeTraits($model, $data)
     {
         $model::create($data);
@@ -32,7 +32,7 @@ trait HasCrud
         return $model::where('id', $identifier)
             ->orWhere('slug', $identifier)
             ->firstOrFail();
-
+        
     }
 
     public function updateTraits($model, $id, $data)
@@ -49,4 +49,3 @@ trait HasCrud
         return $this->indexTraits($model);
     }
 }
-    
