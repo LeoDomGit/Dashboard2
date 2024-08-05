@@ -1,0 +1,18 @@
+{
+    "name": "leo/users",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Leo\\Users\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LeoDomGit",
+            "email": "100814585+LeoDomGit@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
