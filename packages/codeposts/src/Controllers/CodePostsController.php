@@ -1,18 +1,18 @@
 <?php
 
-namespace Leo\Topics\Controllers;
+namespace Leo\CodePosts\Controllers;
 
-use Leo\Topics\Models\Topics;
+use Leo\CodePosts\Models\CodePosts;
 use Illuminate\Http\Request;
-
-class TopicsController
+use Inertia\Inertia;
+class CodePostsController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        return Inertia::render('Code/Code');
     }
 
     /**

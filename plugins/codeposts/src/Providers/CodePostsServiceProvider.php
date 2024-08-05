@@ -1,10 +1,10 @@
 <?php
 
-namespace Leo\Topics\Providers;
+namespace Leo\CodePosts\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class TopicsServiceProvider extends ServiceProvider
+class CodePostsServiceProvider extends ServiceProvider
 {
     public function boot()
     {

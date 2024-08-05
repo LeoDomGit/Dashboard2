@@ -31,6 +31,8 @@
         "leo/sitemap":"*",
         "leo/post":"*",
         "leo/renvenues":"*",
+        "leo/topics":"*",
+        "leo/codeposts":"*",
         "maatwebsite/excel": "*",
         "mnsami/composer-custom-directory-installer": "*",
         "pusher/pusher-php-server": "^7.2",
@@ -143,6 +145,12 @@
             ],
             "./plugins/renvenues": [
                 "leo/renvenues"
+            ],
+            "./plugins/topics": [
+                "leo/topics"
+            ],
+            "./plugins/codeposts": [
+                "leo/codeposts"
             ]
         }
     },
@@ -228,6 +236,14 @@
         {
             "type": "path",
             "url": "./packages/renvenues/"
+        },
+        {
+            "type": "path",
+            "url": "./packages/topics/"
+        },
+        {
+            "type": "path",
+            "url": "./packages/codeposts/"
         }
     ]
 }

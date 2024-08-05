@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d26b34e8b16451d41ccf6cb72183c17",
+    "content-hash": "aba5b45c860ecd4d715fecb3f61ef6ae",
     "packages": [
         {
             "name": "beyondcode/laravel-websockets",
@@ -3119,6 +3119,49 @@
             }
         },
         {
+            "name": "leo/codeposts",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/codeposts",
+                "reference": "79b87d7120d906287c17c55b55acf2ace4abb3a5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\CodePosts\\Providers\\CodePostsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\CodePosts\\": "src/",
+                    "Leo\\CodePosts\\Providers\\": "src/Providers/",
+                    "Leo\\CodePosts\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\CodePosts\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "leo/contacts",
             "version": "dev-main",
             "dist": {
@@ -3576,6 +3619,49 @@
                     "Leo\\Slides\\Providers\\": "src/Providers/",
                     "Leo\\Slides\\Database\\Migrations\\": "database/migrations/",
                     "Leo\\Slides\\Database\\Seeders\\": "database/seeders/"
+                },
+                "classmap": [
+                    "src/Controllers",
+                    "src/Providers",
+                    "src/Models",
+                    "./routes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dom",
+                    "email": "leodomsolar@gmail.com"
+                }
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "leo/topics",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/topics",
+                "reference": "1d07545270ce7fdd3dbec42d30634c82cdd82b8c"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leo\\Topics\\Providers\\TopicsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leo\\Topics\\": "src/",
+                    "Leo\\Topics\\Providers\\": "src/Providers/",
+                    "Leo\\Topics\\Database\\Migrations\\": "database/migrations/",
+                    "Leo\\Topics\\Database\\Seeders\\": "database/seeders/"
                 },
                 "classmap": [
                     "src/Controllers",

@@ -1,13 +1,13 @@
 {
-    "name": "leo/topics",
+    "name": "leo/codeposts",
     "type": "library",
     "license": "MIT",
     "autoload": {
        "psr-4": {
-            "Leo\\Topics\\": "src/",
-            "Leo\\Topics\\Providers\\":"src/Providers/",
-            "Leo\\Topics\\Database\\Migrations\\":"database/migrations/",
-            "Leo\\Topics\\Database\\Seeders\\":"database/seeders/"
+            "Leo\\CodePosts\\": "src/",
+            "Leo\\CodePosts\\Providers\\":"src/Providers/",
+            "Leo\\CodePosts\\Database\\Migrations\\":"database/migrations/",
+            "Leo\\CodePosts\\Database\\Seeders\\":"database/seeders/"
         },
         "classmap": [
             "src/Controllers",
@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Leo\\Topics\\Providers\\TopicsServiceProvider"
+                "Leo\\CodePosts\\Providers\\CodePostsServiceProvider"
             ]
         }
     },
