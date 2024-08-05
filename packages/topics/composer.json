@@ -1,0 +1,12 @@
+{
+    "name": "leo/topics",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Leo\\Topics\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
